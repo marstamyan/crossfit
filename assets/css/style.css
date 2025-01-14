@@ -368,7 +368,7 @@ h6 {
 
 .transparent-btn::after {
   content: "";
-  background-image: url("assets/icons/btn-arrow.svg");
+  background-image: url("../icons/btn-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -820,7 +820,7 @@ h6 {
 .subscribe-form button {
   width: 52px;
   height: 52px;
-  background-image: url("assets/icons/btn-arrow.svg");
+  background-image: url("../icons/btn-arrow.svg");
   background-color: transparent;
   background-size: 60%;
   background-repeat: no-repeat;
