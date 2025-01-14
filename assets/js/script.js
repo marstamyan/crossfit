@@ -8,6 +8,13 @@
       burger.classList.toggle("burger-active")
       menu.classList.toggle("menu-active")
     })
+
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menu.classList.toggle("menu-active")
+        burger.classList.toggle("burger-active")
+      }
+    })
   }
 
   // events slide
