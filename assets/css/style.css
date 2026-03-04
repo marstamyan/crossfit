@@ -406,11 +406,39 @@ h6 {
 
 .promo-img {
   margin-block: -60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.promo-block:hover .promo-img::after {
+  opacity: 0;
 }
 
 .promo-img img {
   width: 100%;
   height: auto;
+  display: block;
+  filter: grayscale(1) contrast(1.12) brightness(0.85);
+  clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+  transition: filter 0.55s ease, transform 0.55s ease;
+}
+
+.promo-block:nth-child(even) .promo-img img {
+  clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.promo-block:hover .promo-img img {
+  filter: grayscale(0) contrast(1) brightness(1);
+  transform: scale(1.04);
 }
 
 /* promo /*/
