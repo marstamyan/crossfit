@@ -45,16 +45,14 @@
 
 @media screen and (max-width: 1240px) {
   .programs-list,
-  .testimonials-list,
-  .pricing-list {
+  .testimonials-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .pricing-item--featured {
-    grid-column: span 2;
-    max-width: 480px;
+  .pricing-list {
+    grid-template-columns: 1fr;
+    max-width: 520px;
     margin-inline: auto;
-    width: 100%;
   }
 }
 
@@ -257,10 +255,6 @@
   .testimonials-list,
   .pricing-list {
     grid-template-columns: 1fr;
-  }
-
-  .pricing-item--featured {
-    grid-column: span 1;
     max-width: 100%;
   }
 
