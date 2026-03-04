@@ -796,26 +796,6 @@ h6 {
   line-height: 1;
 }
 
-.stats-suffix {
-  font-size: clamp(20px, 2.5vw, 40px);
-  font-weight: 700;
-  color: var(--color-light);
-  line-height: 1;
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.stats-item:has(.stats-suffix) {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 4px;
-}
-
-.stats-item:has(.stats-suffix) .stats-label {
-  width: 100%;
-}
-
 .stats-label {
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -855,8 +835,9 @@ h6 {
 }
 
 .programs-icon {
-  font-size: 36px;
-  line-height: 1;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .programs-title {
@@ -938,7 +919,7 @@ h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-item {
@@ -1001,6 +982,13 @@ h6 {
   flex-direction: column;
   row-gap: 10px;
   flex: 1;
+  margin-bottom: 0;
+}
+
+.pricing-item .btn,
+.pricing-item .transparent-btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .pricing-features li {
@@ -1018,6 +1006,41 @@ h6 {
   font-weight: 700;
 }
 /* pricing /*/
+
+/* cta */
+.cta {
+  padding-block: 100px;
+  background-color: var(--color-dark-alternate);
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 24px;
+}
+
+.cta-title {
+  font-size: clamp(24px, 3.5vw, 52px);
+  color: var(--color-light);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.cta-desc {
+  font-size: 18px;
+  color: var(--color-light-gray);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.cta-btn {
+  height: 54px;
+  padding-inline: 48px;
+  font-size: 14px;
+}
+/* cta /*/
 
 /* scroll-to-top */
 .scroll-top {
