@@ -90,4 +90,55 @@
       playButton.classList.remove("hidden")
     }
   })
+
+  // animated counters
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10)
+    const duration = 1600
+    const start = performance.now()
+
+    function update(now) {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      el.textContent = Math.floor(eased * target)
+      if (progress < 1) requestAnimationFrame(update)
+      else el.textContent = target
+    }
+
+    requestAnimationFrame(update)
+  }
+
+  const statsSection = document.querySelector(".stats")
+  if (statsSection) {
+    const counters = statsSection.querySelectorAll(".stats-count")
+    let animated = false
+
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !animated) {
+          animated = true
+          counters.forEach(animateCounter)
+        }
+      },
+      { threshold: 0.4 }
+    )
+    statsObserver.observe(statsSection)
+  }
+
+  // scroll to top
+  const scrollTopBtn = document.querySelector("#scrollTop")
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("visible")
+      } else {
+        scrollTopBtn.classList.remove("visible")
+      }
+    })
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+  }
 })()

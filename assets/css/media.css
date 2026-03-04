@@ -43,6 +43,21 @@
   }
 }
 
+@media screen and (max-width: 1240px) {
+  .programs-list,
+  .testimonials-list,
+  .pricing-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-item--featured {
+    grid-column: span 2;
+    max-width: 480px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .footer-meta {
     font-size: 16px;
@@ -92,6 +107,31 @@
 
   .header-menu {
     order: 2;
+  }
+
+  .stats-list {
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+
+  .stats-item {
+    flex: 1 1 40%;
+  }
+
+  .stats-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .programs {
+    padding-block: 80px;
+  }
+
+  .testimonials {
+    padding-block: 80px;
+  }
+
+  .pricing {
+    padding-block: 80px;
   }
 }
 
@@ -217,6 +257,21 @@
     flex-direction: column;
     row-gap: 25px;
     padding-block: 30px;
+  }
+
+  .programs-list,
+  .testimonials-list,
+  .pricing-list {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-item--featured {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
+  .stats {
+    padding-block: 60px;
   }
 
   .promo-desc {
