@@ -43,6 +43,62 @@
   }
 }
 
+@media screen and (max-width: 1240px) {
+  .programs-list,
+  .testimonials-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-list {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  .header-btn {
+    display: none;
+  }
+
+  .header-actions {
+    order: 3;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header-menu {
+    left: -100%;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .header-menu.menu-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 99999;
+  }
+
+  .header-menu-list {
+    display: none;
+  }
+
+  .header-menu.menu-active .header-menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 20px;
+    background: var(--color-dark);
+    height: 100vh;
+    width: 45vw;
+    padding-top: 35px;
+    border-right: 1px solid var(--color-light);
+  }
+}
+
 @media screen and (max-width: 992px) {
   .footer-meta {
     font-size: 16px;
@@ -82,16 +138,29 @@
     row-gap: 100px;
   }
 
-  .header-btn {
+  .stats-list {
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+
+  .stats-item {
+    flex: 1 1 40%;
+  }
+
+  .stats-item:not(:last-child)::after {
     display: none;
   }
 
-  .header-menu-list {
-    column-gap: 40px;
+  .programs {
+    padding-block: 80px;
   }
 
-  .header-menu {
-    order: 2;
+  .testimonials {
+    padding-block: 80px;
+  }
+
+  .pricing {
+    padding-block: 80px;
   }
 }
 
@@ -119,43 +188,6 @@
   .video-btn {
     width: 120px;
     font-size: 24px;
-  }
-
-  .header-actions {
-    order: 3;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  .header-menu {
-    left: -100%;
-    transition: left 0.3s ease-in-out;
-  }
-
-  .header-menu.menu-active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 99999;
-  }
-
-  .header-menu-list {
-    display: none;
-  }
-
-  .header-menu.menu-active .header-menu-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    row-gap: 20px;
-    background: var(--color-dark);
-    height: 100vh;
-    width: 45vw;
-    padding-top: 35px;
-    border-right: 1px solid var(--color-light);
   }
 
   .event::before {
@@ -217,6 +249,17 @@
     flex-direction: column;
     row-gap: 25px;
     padding-block: 30px;
+  }
+
+  .programs-list,
+  .testimonials-list,
+  .pricing-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .stats {
+    padding-block: 60px;
   }
 
   .promo-desc {
